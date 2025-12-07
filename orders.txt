@@ -1,0 +1,10 @@
+OrderID:1, Name:Jagadish, Total:230.0
+OrderID:1, Name:Jagadish, Total:540
+OrderID:1, Name:jagadesh, Total:60
+OrderID:1, Name:jagadish, Total:600
+OrderID:1,Name:jagadish,Total:130.00,Status:Pending
+OrderID:1,Name:jagadish,Total:130.00,Status:Delivered
+OrderID:2,Name:aslam,Total:390.00,Status:Pending
+OrderID:2,Name:aslam,Total:390.00,Status:Delivered
+OrderID:3,Name:siddu,Total:270.00,Status:Pending
+OrderID:3,Name:siddu,Total:270.00,Status:Delivered

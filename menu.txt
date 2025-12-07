@@ -1,0 +1,10 @@
+101,Veg Burger,Burgers,130.0,1
+102,Chicken Burger,Burgers,150.0,1
+103,Cheese Burger,Burgers,140.0,1
+201,Margherita Pizza,Pizza,250.0,1
+202,Pepperoni Pizza,Pizza,350.0,1
+203,Veggie Pizza,Pizza,300.0,1
+301,French Fries,Sides,80.0,1
+302,Onion Rings,Sides,90.0,1
+401,Coke,Beverages,60.0,1
+402,Biryani,Rice,300.0,1
