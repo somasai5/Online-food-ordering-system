@@ -1,188 +1,128 @@
-# Student Record Management System (SRMS)
 
-A complete C++ console-based Student Record Management System that supports Admin, Student, and Parent login roles.
-All data is stored in plain text files, exactly as shown in the project folder.
+## Online Food Delivery System
+Python + Streamlit + Data Structures Project
 
-# Files Used in This Project
+This project is an Online Food Ordering System implemented using Python, Streamlit for the GUI, and custom Data Structures such as Queue, Stack, Linked List, and File Handling to manage orders.
 
-These filenames match exactly the names seen in your images:
+It replicates real-world restaurant workflows:
 
-File Name - Description
-1.admin_login Stores admin username and password
-2.students Stores all student records: roll, names, mobile, marks, complaint
-3.student_login - Stores student login credentials
-4.parent_login - Stores parent login credentials
-5.complaints - Auto-generated file containing roll–complaint entries
-6.srms.cpp - Main C++ source code
-7.srms.exe / srms (Application) - Compiled executable
+Customers browse menu & place orders
 
-Example File Contents
+Orders go into a Queue (FIFO)
 
-admin_login
-admin 12345a
+Admin processes orders → move to Stack (LIFO)
 
-# parent_login
+Admin can undo last delivery
 
-1|SureshKumar#001
-2|PoojaSharma#002
-3|MaheshSingh#003
-4|LakshmiNair#004
-5|RaviReddy#005
+Admin can add menu items & update item availability status
 
-# student_login
+Order bill is auto generated
 
-1|RohanKumar@001
-2|AnitaSharma@002
-3|VikramSingh@003
-4|MeeraNair@004
-5|ArjunReddy@005
+## Features
+Feature	Description
+Customer Order	Browse menu, choose quantity, generate bill
+Order Queue	FIFO queue for pending orders
+Delivered History Stack	LIFO stack for delivered orders
+Undo Delivery	Move last delivered order back to queue
+Admin Authentication	Using credentials stored in admin.txt
+Edit Menu	Admin can add new food items & toggle availability
+File Storage	Uses menu.txt and orders.txt
+Streamlit GUI	User-friendly interface
+##  Technologies Used
 
-# students
+Python
 
-1|Rohan Kumar|Suresh Kumar|9876543210|85,78,92,88,91|
-2|Anita Sharma|Pooja Sharma|9876501234|76,81,69,74,80|
-3|Vikram Singh|Mahesh Singh|9123456780|90,88,85,87,89|
-4|Meera Nair|Lakshmi Nair|9988776655|67,72,70,75,73|
-5|Arjun Reddy|Ravi Reddy|9876123450|95,94,96,98,97|
+Streamlit
 
-# Password Generation Logic
+OOP concepts (Classes, Methods)
 
-When a student is added:
+Queue (Linked List implementation)
 
-✔ Student Password
-<nameWithoutSpaces>@<last3DigitsOfRoll>
+Stack (List implementation)
 
-✔ Parent Password
-<parentNameWithoutSpaces>#<last3DigitsOfRoll>
+File Handling (menu.txt, admin.txt, orders.txt)
 
-# Admin Features
+ Project Structure
+Online_food_delivery_system/
+│
+├── main.py               <-- Streamlit application
+├── menu.txt              <-- Menu database
+├── admin.txt             <-- Admin credentials
+└── orders.txt            <-- Saved order history (auto generated)
 
-Add new student
+## menu.txt Format
+101,Veg Burger,Burgers,130.00,1
+102,Chicken Burger,Burgers,150.00,1
+103,Cheese Burger,Burgers,140.00,1
+201,Margherita Pizza,Pizza,250.00,1
+202,Pepperoni Pizza,Pizza,350.00,1
+203,Veggie Pizza,Pizza,300.00,1
+301,French Fries,Sides,80.00,1
+302,Onion Rings,Sides,90.00,1
+401,Coke,Beverages,60.00,0
 
-View all students
+## admin.txt
+Balaji
+12345
 
-Delete a student (automatically cleans login files)
+## How to Run
+Install dependencies
+pip install streamlit pandas
 
-Update marks for any subject
+Run application
+streamlit run main.py
 
-View complaints
+Application starts at:
+http://localhost:8501
 
-Solve/remove complaints
+ Working Flow
+##  Customer
 
-Change admin password
+Browse menu
 
-# Student Features
+Add items to cart by quantity
 
-Login with roll number + password
+View bill
 
-View their marks and personal details
+Order pushed to order queue
 
-Raise a complaint
+## Admin
 
-Change their password
+Login
 
-# Parent Features
+View Menu
 
-Login using child’s roll number + parent password
+Add New Item
 
-View student’s marks
+Update Availability (Available / Not Available)
 
-Change parent password
+Process Next Order → moves to Delivered stack
 
-# Data Formats
+Undo Delivery → moves back to Queue
 
-File: students
-roll|studentName|parentName|mobile|m1,m2,m3,m4,m5|complaint
+View Pending / Delivered orders
 
-File: student_login
-roll|password
 
-File: parent_login
-roll|password
 
-File: admin_login
-username password
+## Data Structure Usage
+DS	Usage
+Queue (Linked List)	Pending Customer Orders
+Stack	Delivered Order History
+File Handling	Menu, Admin & Order Storage
+Classes & OOP	System modularity
 
-File: complaints
 
-Generated from students who submitted a complaint:
 
-roll|complaint
 
-# How to Compile and Run
 
-1. Compile
-   g++ srms.cpp -o srms
+## Future Enhancements
 
-2. Run
+Deploy online on Streamlit Cloud
 
-Windows:
+Add login signup for customers
 
-srms.exe
+PDF bill download
 
-Linux/macOS:
+Food images & card UI (Swiggy style)
 
-./srms
-
-Ensure the folder has permissions to read/write all text files.
-
-# Program Flow
-
-Main Menu
-
-1. Admin Login
-2. Student Login
-3. Parent Login
-4. Exit
-
-Admin Menu
-
-1. Add Student
-2. View Students
-3. Delete Student
-4. Update Marks
-5. View Complaints
-6. Solve Complaint
-7. Change Admin Password
-8. Logout
-
-Student Menu
-
-1. View My Details
-2. Raise Complaint
-3. Change Password
-4. Logout
-
-Parent Menu
-
-1. View Child Details
-2. Change Password
-3. Logout
-
-🛠️ Key Functional Blocks in Code
-Function Purpose
-addStudent() - Adds a new student and generates passwords
-viewStudents() - Displays all current records
-deleteStudent() - Removes student + login records
-updateMarks() - Updates all or single subject marks
-viewComplaints() - Shows all submitted complaints
-solveComplaint() - Removes complaint for a roll number
-studentView() - Student profile view
-parentView() - Parent/student marks view
-changePasswordInFile() - Changes student/parent password
-changeAdminPassword() - Changes admin password
-
-# Initial Setup
-
-Create a file named admin_login:
-
-admin 12345a
-
-Place empty files:
-
-students
-student_login
-parent_login
-complaints
-
-The system will fill them as you add students.
+Database integration (SQLite / MySQL)
